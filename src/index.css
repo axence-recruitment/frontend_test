@@ -1,0 +1,24 @@
+:root {
+  --color-bg-primary: #FFFFFF;
+
+  --color-text-primary: #36435F;
+  --color-text-secondary: #96A0B5;
+
+  --color-line-primary: #E2DFDF;
+
+  --color-button-first: #3E81CF;
+  --color-button-second: #60C2EC;
+}
+
+html, body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
