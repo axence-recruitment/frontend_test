@@ -17,7 +17,7 @@ Będziemy oceniali uporządkowanie kodu, wykorzystane biblioteki, ukończenie za
 - git commit -m "imie i nazwisko kandydata"
 - git push https://github.com/axence-recruitment/frontend_test.git master:attempt/[inicjały kandydata]
 
-Jeżeli nie chcesz korzystać z Typescript, zmień rozszerzenia plików z .tsx na .jsx
+Jeżeli nie chcesz korzystać z Typescript, zmień rozszerzenia plików z .tsx na .jsxaaaa
 
 
 ## Posts REST API
