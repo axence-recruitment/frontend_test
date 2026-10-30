@@ -22,6 +22,15 @@ Na realizację zadania masz 45 minut. Zadania są ułożone mniej więcej od naj
 
 Możesz uruchomić testy tylko dla jednego zadania, np. `npm test -- plus-one`.
 
+## Debugowanie
+
+- **Wyniki testów** - nazwa każdego testu zawiera wejście i oczekiwany wynik, np. `plusOne([1,2,9]) → [1,3,0]`. Gdy test nie przechodzi, Vitest pokaże obok, co faktycznie zwróciła Twoja funkcja.
+- **`console.log`** działa normalnie - wypisane wartości pojawią się w terminalu przy teście, który je wywołał.
+- **Pojedyncze zadanie** - `npm test -- plus-one` uruchamia tylko testy wybranego zadania.
+- **Pojedynczy test** - zamień `it(...)` / `it.each(...)` na `it.only(...)` / `it.only.each(...)` (pamiętaj, żeby potem to cofnąć - nie modyfikuj testów w oddanym rozwiązaniu).
+- **Debugger w VS Code** - otwórz plik zadania (lub jego testów), postaw breakpoint i uruchom konfigurację *„Debuguj testy bieżącego pliku”* (`F5`). Repozytorium rekomenduje też rozszerzenie *Vitest* (`vitest.explorer`), które dodaje przyciski *Run* / *Debug* przy każdym teście.
+- **Debugger w WebStorm / IntelliJ** - kliknij zieloną ikonę obok testu i wybierz *Debug*.
+
 ## Zasady
 - Nie modyfikuj plików z testami ani sygnatur funkcji.
 - Możesz korzystać z dowolnych wbudowanych funkcji języka i dokumentacji (np. MDN), ale nie instaluj dodatkowych bibliotek.

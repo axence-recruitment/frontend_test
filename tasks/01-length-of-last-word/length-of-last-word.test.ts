@@ -2,32 +2,26 @@ import { describe, expect, it } from 'vitest';
 import { lengthOfLastWord } from './length-of-last-word';
 
 describe('lengthOfLastWord', () => {
-  it('zwraca długość ostatniego słowa', () => {
-    expect(lengthOfLastWord('Hello World')).toBe(5);
+  it.each([
+    ['Hello World', 5],
+    ['luffy is still joyboy', 6],
+    ['a', 1],
+    ['day', 3],
+    ['Hello W', 1],
+  ])('lengthOfLastWord(%j) → %j', (s, expected) => {
+    expect(lengthOfLastWord(s)).toBe(expected);
   });
 
-  it('ignoruje spacje na początku, na końcu i wielokrotne spacje między słowami', () => {
-    expect(lengthOfLastWord('   fly me   to   the moon  ')).toBe(4);
+  describe('ignoruje spacje na początku, na końcu i wielokrotne spacje między słowami', () => {
+    it.each([
+      ['   fly me   to   the moon  ', 4],
+      ['   word   ', 4],
+    ])('lengthOfLastWord(%j) → %j', (s, expected) => {
+      expect(lengthOfLastWord(s)).toBe(expected);
+    });
   });
 
-  it('obsługuje dłuższe zdania', () => {
-    expect(lengthOfLastWord('luffy is still joyboy')).toBe(6);
-  });
-
-  it('obsługuje pojedyncze słowo', () => {
-    expect(lengthOfLastWord('a')).toBe(1);
-    expect(lengthOfLastWord('day')).toBe(3);
-  });
-
-  it('obsługuje pojedyncze słowo otoczone spacjami', () => {
-    expect(lengthOfLastWord('   word   ')).toBe(4);
-  });
-
-  it('obsługuje ostatnie słowo jednoliterowe', () => {
-    expect(lengthOfLastWord('Hello W')).toBe(1);
-  });
-
-  it('obsługuje bardzo długie wejście', () => {
+  it("obsługuje bardzo długie wejście: 'ab ' × 3000 + 'x' × 500 + ' ' × 500 → 500", () => {
     const s = 'ab '.repeat(3000) + 'x'.repeat(500) + ' '.repeat(500);
     expect(lengthOfLastWord(s)).toBe(500);
   });
